@@ -1,16 +1,23 @@
-public class character{
+
+public class character {
+
+    // #region Attribut
+
     private String name;
     private String origin;
 
     private int hp;
+    private int max_hp;
 
     private int phy;
     private int intel;
     private int soc;
 
-    // constructor
+    // #endregion
 
-    public character(){
+    // #region Constructor
+
+    public character() {
         this.name = "Gabriel Smith";
         this.origin = "Francais";
 
@@ -21,10 +28,11 @@ public class character{
         this.soc = 14;
     }
 
-    public character(String name, String origin, int hp, int phy, int intel, int soc){
+    public character(String name, String origin, int hp, int phy, int intel, int soc) {
         this.name = name;
         this.origin = origin;
-        
+
+        this.max_hp = hp;
         this.hp = hp;
 
         this.phy = phy;
@@ -32,74 +40,94 @@ public class character{
         this.soc = soc;
     }
 
-    // getter 
+    // #endregion
 
-    public String getname(){
+    // #region Getter
+    public String getname() {
         return this.name;
     }
 
-    public String getorigin(){
+    public String getorigin() {
         return this.origin;
     }
 
-    public int gethp(){
+    public int getmax_hp() {
+        return this.max_hp;
+    }
+
+    public int gethp() {
         return this.hp;
     }
 
-    public int getphy(){
+    public int getphy() {
         return this.phy;
     }
 
-    public int getintel(){
+    public int getintel() {
         return this.intel;
     }
 
-    public int getsoc(){
+    public int getsoc() {
         return this.soc;
     }
 
-    // setter
+    // #endregion
 
-    public void setname(String name){
+    // #region Setter
+
+    public void setname(String name) {
         this.name = name;
     }
 
-    public void setorigin(String origin){
+    public void setorigin(String origin) {
         this.origin = origin;
     }
 
-    public void sethp(int hp){
+    public void setmax_hp(int max_hp) {
+        this.max_hp = max_hp;
+    }
+
+    public void sethp(int hp) {
         this.hp = hp;
     }
 
-    public void setphy(int phy){
+    public void setphy(int phy) {
         this.phy = phy;
     }
 
-    public void setintel(int intel){
+    public void setintel(int intel) {
         this.intel = intel;
     }
 
-    public void setsoc(int soc){
+    public void setsoc(int soc) {
         this.soc = soc;
     }
+    // #endregion
 
-    // Overrides
+    // #region Overrides
 
-    public String toString(){
-        return this.name + ";" + this.origin + ";" + this.hp + ";" + this.phy + ";" + this.intel + ";" + intel.soc;
+    public String toString() {
+        return this.name + ";" + this.origin + ";" + this.hp + ";" + this.max_hp + ";" + this.phy + ";" + this.intel
+                + ";" + this.soc;
     }
 
-    public boolean equals(object o){
-        if (o == null || o.getClass() != this.getClass()){
+    public boolean equals(Object o) {
+        if (o == null || o.getClass() != this.getClass()) {
             return false;
         }
         character c = (character) o;
-        return this.name == c.name && this.origin == c.origin && this.hp == c.hp && this.phy == c.phy && this.intel = c.intel && this.soc == c.soc;
+        return this.name == c.name && this.origin == c.origin && this.hp == c.hp && this.phy == c.phy
+                && this.intel == c.intel && this.soc == c.soc && this.max_hp == c.max_hp;
     }
 
-    public int hashcode(){
-        return this.name.hashcode()*3 + this.origin.hashcode() + this.hp*5 + this.phy*7 +this.intel*11 + this.soc*13
+    public int hashCode() {
+        return this.name.hashCode() * 3 + this.origin.hashCode() + this.hp * 5 + this.phy * 7 + this.intel * 11
+                + this.soc * 13 + this.max_hp * 31;
     }
 
+    // #endregion
+
+    // #region Methods
+
+    // #endregion
 }
