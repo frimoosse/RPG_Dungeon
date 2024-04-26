@@ -1,0 +1,1 @@
+public enum rarity{COMMON, RARE, SRARE, URARE, EPIC, LEGENDARY}

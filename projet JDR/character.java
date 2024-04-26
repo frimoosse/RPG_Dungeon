@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class character {
 
@@ -13,6 +14,8 @@ public class character {
     private int intel;
     private int soc;
 
+    private ArrayList<items> inventory;
+
     // #endregion
 
     // #region Constructor
@@ -26,9 +29,11 @@ public class character {
         this.phy = 14;
         this.intel = 14;
         this.soc = 14;
+
+        this.inventory = new ArrayList<items>();
     }
 
-    public character(String name, String origin, int hp, int phy, int intel, int soc) {
+    public character(String name, String origin, int hp, int phy, int intel, int soc, ArrayList<items> inv) {
         this.name = name;
         this.origin = origin;
 
@@ -38,6 +43,8 @@ public class character {
         this.phy = phy;
         this.intel = intel;
         this.soc = soc;
+
+        this.inventory = inv;
     }
 
     // #endregion
@@ -71,6 +78,9 @@ public class character {
         return this.soc;
     }
 
+    public ArrayList<items> getinv(){
+        return this.inventory;
+    }
     // #endregion
 
     // #region Setter
@@ -101,6 +111,10 @@ public class character {
 
     public void setsoc(int soc) {
         this.soc = soc;
+    }
+
+    public void setinv(ArrayList<items> inv){
+        this.inventory = inv;
     }
     // #endregion
 

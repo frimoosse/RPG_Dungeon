@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class playable_character extends character {
@@ -11,8 +12,8 @@ public class playable_character extends character {
         this.player = "Smith";
     }
 
-    public playable_character(String name, String origin, int hp, int phy, int intel, int soc, String player) {
-        super(name, origin, hp, phy, intel, soc);
+    public playable_character(String name, String origin, int hp, int phy, int intel, int soc, ArrayList<items> inv, String player) {
+        super(name, origin, hp, phy, intel, soc, inv);
         this.player = player;
     }
 
@@ -36,7 +37,7 @@ public class playable_character extends character {
 
     // #region Methods
 
-    public void attack(adverse c) {
+    public void combat_action(adverse c) { // can be to hit or to heal, base => hit
         Random rand = new Random();
         // La méthode pêut potentiellement être changer dans le futur donc j'utilise var
         // car ça permet de ne pas avoir a changer toute les variables.
@@ -61,7 +62,7 @@ public class playable_character extends character {
         System.out.println("You've been hit by " /* a smooth criminal */ + c.getctype() + " you lost " + dmg + " HP");
     }
 
-    public void repos() {
+    public void rest() {
         Random rand = new Random();
         var heal = rand.nextInt(6) + rand.nextInt(6);
         var act_hp = this.gethp();

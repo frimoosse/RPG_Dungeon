@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class adverse extends character {
 
     private int threat;
@@ -11,8 +13,8 @@ public class adverse extends character {
         this.ctype = "enemy";
     }
 
-    public adverse(String name, String origin, int hp, int phy, int intel, int soc, int threat, String ectype) {
-        super(name, origin, hp, phy, intel, soc);
+    public adverse(String name, String origin, int hp, int phy, int intel, int soc, ArrayList<items> inv, int threat, String ectype) {
+        super(name, origin, hp, phy, intel, soc, inv);
         this.threat = threat;
         this.ctype = ectype;
     }
